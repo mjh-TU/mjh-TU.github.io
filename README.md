@@ -1,15 +1,15 @@
 # mjh-TU.github.io
 
-## Arch Linux Install
+# Arch Linux Install
 
-Download ISO-
+###Download ISO-
     Downloaded ISO from Arizona edu mirroring website, and checked the SHA256 hash with the hash on archlinux website and they match
-Boot VM from ISO-
+###Boot VM from ISO-
     Start Install process
 
     Once I was on the terminal, I could't type, then I realized I needed more RAM and not the 768 MB and then when I rebooted the machine finally booted up correctly
 
-Configuring
+###Configuring
     Found US keyboard layout using the command
         ls -l /usr/share/kdb/keymaps/**/*.map.gz | grep -i /qwerty/us
 
