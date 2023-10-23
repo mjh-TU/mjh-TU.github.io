@@ -9,7 +9,7 @@
 
     Once I was on the terminal, I could't type, then I realized I needed more RAM and not the 768 MB and then when I rebooted the machine finally booted up correctly
 
-###Configuring
+### Configuring
     Found US keyboard layout using the command
         ls -l /usr/share/kdb/keymaps/**/*.map.gz | grep -i /qwerty/us
 
