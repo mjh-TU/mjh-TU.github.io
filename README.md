@@ -1,7 +1,6 @@
 # mjh-TU.github.io
 
-Arch Linux Install
-## Heading level 2	
+## Arch Linux Install
 
 Download ISO-
     Downloaded ISO from Arizona edu mirroring website, and checked the SHA256 hash with the hash on archlinux website and they match
