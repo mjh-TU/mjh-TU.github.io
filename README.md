@@ -165,6 +165,13 @@
  ### Create the codi account with sudo privileges
         sudo useradd codi
         sudo usermod -aG wheel codi
+        sudo passwd codi:
+            change password to GraceHopper1906
+
+        To set password to expire
+            sudo passwd --expire codi
+        To check if the user is expired:
+            sudo chage -l codi
     
  ### Had no internet, so I restarted the networkmanager, and also enabled the service using:
         sudo systemctl restart NetworkManager
