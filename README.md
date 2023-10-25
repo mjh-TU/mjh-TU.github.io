@@ -3,11 +3,15 @@
 # Arch Linux Install
 
 ### Download ISO-
-    Downloaded ISO from Arizona edu mirroring website, and checked the SHA256 hash with the hash on archlinux website and they match
+    Downloaded ISO from https://mirror.arizona.edu/archlinux/iso/2023.10.14/
+    Checked file hash:
+        On powershell type: get-filehash pathtofile
+        Compare that with the one on archlinux website to verify
+    
 ### Boot VM from ISO-
-    Start Install process
+    Started up machine using vmware workstation pro
 
-    Once I was on the terminal, I could't type, then I realized I needed more RAM and not the 768 MB and then when I rebooted the machine finally booted up correctly
+    Once I was on the terminal, I could't type, then I realized I needed more RAM and not the 768 MB and then when I rebooted the     machine finally booted up correctly
 
 ### Configuring
     Found US keyboard layout using the command
@@ -19,7 +23,7 @@
     
 ###  Verify Boot mode
     cat /sys/firmware/efi/fw_platform_size
-    That directory efi did not exist so, I searched online and that means I was in bios boot mode, so I went to the VM settings and changed it to boot to UEFI
+    That directory efi did not exist so, I searched online and that means I was in bios boot mode, so I went to the VM settings       and changed it to boot to UEFI
 
     Ran the command again
         cat /sys/firmware/efi/fw_platform_size
