@@ -225,9 +225,10 @@
                         exec startx
                     fi
         
-        Create alias:
+        Create alias by adding the lines below to the ~/.bashrc file:
             alias startyprint='cat ~/.bashrc'
             alias startypath='/home/archuser/.bashrc'
+            alias l='ls -lah'
 
     
 
