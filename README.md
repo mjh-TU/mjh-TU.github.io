@@ -30,18 +30,17 @@
 
     The command outputed 64 which means I am in 64 bit mode which is what I need to be in
 
- ### Connect to Internet
+### Connect to Internet
         run command to check if IP assinged
             ip a
         ran a ping to google and have internet
         Internet was already pre-configured
     
- ### Update system clock
+### Update system clock
         Run the command
             timedatectl
         Time is in UTC and the time is correct
-
-  ### Partition Disks
+### Partition Disks
         run the command
             fdisk -l
         the loop0 is the iso file
@@ -60,19 +59,19 @@
 
         Finally use w to write to disk
     
-   ### Format disks
+### Format disks
         I chose sda1 for the efi system and sda2 for the primary
         to format the efi system partition
             mkfs.fat -F 32 /dev/sda1
         To format the primary to ext4
             mkfs.ext4 /dev/sda2
 
-   ### Mounting the file systems
+### Mounting the file systems
         mount the primary root partition to /mnt
             mount /dev/sda2 /mnt
         Then mount the efi system partition
             mount --mkdir /dev/sda1 /mnt/boot
-   ### Make user
+### Make user
         Then I created a new user 'archuser', Note: there is no sudo group so it is a normal user
             command- useradd archuser
         Then I changed the password for the user:
@@ -81,11 +80,11 @@
             password
         I then deleted the user and forgot to document why (added this comment after rebooting the machine and was unable to log in)
 
-   ### Install essential packages
+### Install essential packages
         run the command:
             pacstrap -K /mnt base linux linux-firmware
 
-   ### Configure the system:
+### Configure the system:
         generate an fstab file
             genfstab -U /mnt >> /mnt/etc/fstab
         change root into the new system
@@ -95,7 +94,7 @@
             hwclock --systohc
     to install packages use pacman
         pacman -S vim
-   ### Localization:
+### Localization:
         edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8
             vim /etc/locale.gen
         generate the locales by running
@@ -111,15 +110,15 @@
         Set hostname
             vim /etc/hostname
             type in what you want your hostname to be, I did: archlinuxmachine
-   ### initramfs
+### initramfs
         run command: mkinitcpio -P
-   ### Root Password:
+### Root Password:
         passwd
         I set password to 'password'
     
-   ### I then did another snapshot just in case
+### I then did another snapshot just in case
 
-   ### Installed other packages
+### Installed other packages
         pacman -S networkmanager
         pacman -S iwd
         pacman -S man-db
@@ -131,7 +130,7 @@
             pacman -S grub
             pacman -S efibootmgr
     
-   ### Bootloader
+### Bootloader
         the mounting point for the efi is /mnt/boot
 
         ran the command: 
@@ -145,14 +144,14 @@
         Generate the main configuration file
             grub-mkconfig -o /boot/grub/grub.cfg
     
-   ### Performed another snapshot before exiting chroot and rebooting
+### Performed another snapshot before exiting chroot and rebooting
 
     Once I rebooted, i was unable to log in as I forgot I have deleted the archuser account and by defaut cant log in as root. So i reverted back to a snapshot and created the user:
         useradd archuser
         passwd archuser
         password is: password
     
-   ### Install and configure sudo
+### Install and configure sudo
         pacman -S sudo
     
         added user to wheel group
@@ -166,7 +165,7 @@
     
         Was successfully able to log in as the archuser account
     
-   ### Create the codi account with sudo privileges
+### Create the codi account with sudo privileges
         sudo useradd codi
         sudo usermod -aG wheel codi
         sudo passwd codi:
@@ -177,30 +176,30 @@
         To check if the user is expired:
             sudo chage -l codi
     
-   ### Had no internet, so I restarted the networkmanager, and also enabled the service using:
+### Had no internet, so I restarted the networkmanager, and also enabled the service using:
         sudo systemctl restart NetworkManager
         sudo systemctl enable NetworkManager
     
-   ### Install fish shell
+### Install fish shell
         sudo pacman -S fish
     
-   ### Install openssh
+### Install openssh
         sudo pacman -S openssh
     
-   ### Useradd did not create home directory so i ran the command
+### Useradd did not create home directory so i ran the command
         sudo mkhomedir_helper archuser
 
-   ### Make backup of the .bashrc systemwide
+### Make backup of the .bashrc systemwide
         sudo cp /etc/bash.bashrc /etc/bash.bashrc.backup
 
-  ### Customize
+### Customize
         Change colors of the terminal by adding these lines to the /etc/bash.bashrc (makes new users have a color scheme, for current user add it to the .bashrc file in the users home directory):
         export PS1='\e[33;1m\u@\h: \e[31m\W\e[0m\$ '
         export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33'
 
     
 
-   ### Install GUI:
+### Install GUI:
 
         Going to use Budgie
 
