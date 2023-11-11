@@ -32,6 +32,14 @@
     Admin page:
   ![image](https://github.com/mjh-TU/mjh-TU.github.io/assets/124700981/1d99fed7-1a58-48bb-a3ef-bd01d396d476)
 
+    Docker process running:
+  ![image](https://github.com/mjh-TU/mjh-TU.github.io/assets/124700981/85b1c892-77da-4e7c-b1fb-1b3677ba543a)
+
+    Docker yml file used for wordpress:
+  ![image](https://github.com/mjh-TU/mjh-TU.github.io/assets/124700981/68e3f214-9b56-42c7-91bc-a52117fb3dce)
+
+
+
     
     
       
