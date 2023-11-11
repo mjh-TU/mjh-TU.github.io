@@ -30,7 +30,7 @@
     Accessed wordpress from browser on port 8000
     Created user and password
     Admin page:
-    ![image](https://github.com/mjh-TU/mjh-TU.github.io/assets/124700981/1d99fed7-1a58-48bb-a3ef-bd01d396d476)
+  ![image](https://github.com/mjh-TU/mjh-TU.github.io/assets/124700981/1d99fed7-1a58-48bb-a3ef-bd01d396d476)
 
     
     
